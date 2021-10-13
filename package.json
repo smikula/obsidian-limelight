@@ -8,6 +8,8 @@
         "dev": "rollup --config rollup.config.js && node ./build/copy-static-files.js",
         "build": "rollup --config rollup.config.js --environment BUILD:production && node ./build/copy-static-files.js",
         "deploy": "node ./build/deploy.js",
+        "dev-deploy": "yarn dev && yarn deploy",
+        "build-deploy": "yarn build && yarn deploy",
         "deploy-clean": "node ./build/deploy-clean.js"
     },
     "keywords": [],
