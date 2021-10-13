@@ -1,7 +1,7 @@
 {
     "name": "obsidian-limelight",
     "version": "0.1.0",
-    "description": "Spotlight your active pane",
+    "description": "Put a spotlight on your active pane",
     "main": "main.js",
     "scripts": {
         "clean": "node ./build/clean.js",
