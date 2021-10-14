@@ -3,3 +3,19 @@
     opacity: 0.75;
     transition: opacity 0.25s ease-out;
 }
+
+/* Give the view content relative positioning so that we can position stuff within it */
+.xmod-active .view-content {
+    position: relative;
+}
+
+/* Spotlight gradient */
+.xmod-active .view-content::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    content: linear-gradient(rgba(100, 100, 100, 0), rgba(100, 100, 100, 1));
+    height: 20px;
+    z-index: 1000;
+}
