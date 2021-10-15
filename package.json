@@ -2,6 +2,7 @@
     "name": "obsidian-limelight",
     "version": "1.0.0",
     "description": "Put a spotlight on your active pane",
+    "author": "Scott Mikula <mikula@gmail.com>",
     "main": "main.js",
     "scripts": {
         "clean": "node ./build/clean.js",
@@ -12,9 +13,6 @@
         "build-deploy": "yarn build && yarn deploy",
         "deploy-clean": "node ./build/deploy-clean.js"
     },
-    "keywords": [],
-    "author": "",
-    "license": "MIT",
     "devDependencies": {
         "@rollup/plugin-commonjs": "^18.0.0",
         "@rollup/plugin-node-resolve": "^11.2.1",
@@ -25,5 +23,6 @@
         "rollup": "^2.32.1",
         "tslib": "^2.2.0",
         "typescript": "^4.2.4"
-    }
+    },
+    "license": "MIT"
 }
