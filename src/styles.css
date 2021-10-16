@@ -1,6 +1,10 @@
 /* Dim non-active markdown panes */
 .workspace-leaf:not(.mod-active) .workspace-leaf-content[data-type='markdown'] {
     opacity: 0.75;
+}
+
+/* Apply opacity transition to all panes */
+.workspace-leaf .workspace-leaf-content[data-type='markdown'] {
     transition: opacity 0.25s ease-out;
 }
 
