@@ -1,8 +1,9 @@
 import { App, PluginSettingTab, Setting } from 'obsidian';
 import { LimelightPlugin } from './LimelightPlugin';
+import { LimelightSettings } from './LimelightSettings';
 
 export class LimelightSettingTab extends PluginSettingTab {
-    constructor(app: App, plugin: LimelightPlugin) {
+    constructor(app: App, plugin: LimelightPlugin, private settings: LimelightSettings) {
         super(app, plugin);
     }
 
@@ -16,10 +17,11 @@ export class LimelightSettingTab extends PluginSettingTab {
             )
             .addToggle((toggle) =>
                 toggle
-                    .setValue(true) // TODO: use value from settings
+                    .setValue(this.settings.data.glare) // initial value
                     .onChange(async (value) => {
-                        // TODO: save value to settings
-                        console.log('Glare changed to ', value);
+                        this.settings.data.glare = value;
+                        await this.settings.save();
+                        console.log('Glare changed to ', value, this.settings);
                     })
             );
     }
