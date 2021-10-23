@@ -3,22 +3,30 @@ import { DEFAULT_DATA } from './defaultData';
 import { DataSchema, DataSchemaKey } from './DataSchema';
 
 export class LimelightData {
-    private dataPromise: Promise<Record<DataSchemaKey, any>>;
+    private data: DataSchema | undefined;
 
-    constructor(private plugin: Plugin) {
-        this.dataPromise = plugin
-            .loadData()
-            .then((rawData) => Object.assign({}, DEFAULT_DATA, rawData));
+    constructor(private plugin: Plugin) {}
+
+    initialize(): Promise<void> {
+        return this.plugin.loadData().then((rawData) => {
+            this.data = Object.assign({}, DEFAULT_DATA, rawData);
+        });
     }
 
-    getField<TKey extends DataSchemaKey>(key: TKey): Promise<DataSchema[TKey]> {
-        return this.dataPromise.then((data) => data[key]);
+    getField<TKey extends DataSchemaKey>(key: TKey): DataSchema[TKey] {
+        this.validateInitialized();
+        return this.data![key];
     }
 
     setField<TKey extends DataSchemaKey>(key: TKey, value: DataSchema[TKey]): Promise<void> {
-        return this.dataPromise.then((data) => {
-            data[key] = value;
-            return this.plugin.saveData(data);
-        });
+        this.validateInitialized();
+        this.data![key] = value;
+        return this.plugin.saveData(this.data);
+    }
+
+    validateInitialized() {
+        if (!this.data) {
+            throw new Error('Plugin data is not initialized yet.');
+        }
     }
 }

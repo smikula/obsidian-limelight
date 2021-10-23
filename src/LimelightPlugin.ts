@@ -15,6 +15,7 @@ export class LimelightPlugin extends Plugin {
 
     async onload() {
         this.data = new LimelightData(this);
+        await this.data.initialize();
         this.addSettingTab(new LimelightSettingTab(this.app, this));
     }
 }
