@@ -2,7 +2,7 @@ import { Plugin } from 'obsidian';
 import { DEFAULT_DATA } from './defaultData';
 import { DataSchema, DataSchemaKey } from './DataSchema';
 
-export class PluginData {
+export class LimelightData {
     private dataPromise: Promise<Record<DataSchemaKey, any>>;
 
     constructor(private plugin: Plugin) {
