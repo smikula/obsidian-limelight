@@ -1,5 +1,5 @@
-import { LimelightData } from './LimelightData';
+import { DataSchema } from './DataSchema';
 
-export const DEFAULT_DATA: LimelightData = {
+export const DEFAULT_DATA: DataSchema = {
     intensity: 50,
 };
