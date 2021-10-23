@@ -1,5 +1,5 @@
 import { DataSchema } from './DataSchema';
 
 export const DEFAULT_DATA: DataSchema = {
-    intensity: 50,
+    intensity: 40,
 };
