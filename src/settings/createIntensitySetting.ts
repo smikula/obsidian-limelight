@@ -1,6 +1,7 @@
 import { Setting } from 'obsidian';
+import { LimelightData } from 'src/data/LimelightData';
 
-export function createIntensitySetting(container: HTMLElement) {
+export function createIntensitySetting(container: HTMLElement, data: LimelightData) {
     new Setting(container)
         .setName('Spotlight intensity')
         .setDesc('Controls how dim the inactive panes are relative to the spotlighted pane.')
