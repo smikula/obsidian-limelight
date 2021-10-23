@@ -7,10 +7,10 @@ export function createIntensitySetting(container: HTMLElement, data: LimelightDa
         .setDesc('Controls how dim the inactive panes are relative to the spotlighted pane.')
         .addSlider((slider) =>
             slider
-                .setValue(50) // TODO: use value from settings
+                .setValue(data.getField('intensity')) // populate initial value from settings
                 .onChange((value) => {
-                    // TODO: save value to settings
-                    console.log('Intensity changed to ', value);
+                    // Write new value to settings
+                    data.setField('intensity', value);
                 })
         );
 }
