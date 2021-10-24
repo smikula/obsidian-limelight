@@ -1,6 +1,6 @@
 import { Plugin } from 'obsidian';
 import { LimelightData } from './data/LimelightData';
-import { initializeIntensity } from './settings/createIntensitySetting';
+import { initializeIntensity } from './settings/intensitySetting';
 import { LimelightSettingTab } from './settings/LimelightSettingTab';
 
 export class LimelightPlugin extends Plugin {
