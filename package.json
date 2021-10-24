@@ -1,6 +1,6 @@
 {
     "name": "obsidian-limelight",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Put a spotlight on your active pane",
     "author": "Scott Mikula <mikula@gmail.com>",
     "main": "main.js",
